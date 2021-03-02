@@ -1,0 +1,18 @@
+<h1 align="center">Login Page</h1>
+<!-- 
+<input type="text"     placeholder="Enter LoginId"  [(ngModel)]="user.loginId"/> <br/>
+<input type="password" placeholder="Enter Password" [(ngModel)]="user.password"/> <br/>
+<button (click)="loginSubmit()">Login</button> 
+-->
+
+<form #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm.value)" novalidate>
+    <input type="text"     placeholder="LoginId"  name="loginId"  #loginId="ngModel"  ngModel /> <br/>
+    <input type="password" placeholder="Password" name="password" #password="ngModel" ngModel  /> <br/>
+    <button [disabled]="!loginForm.valid">Login</button>
+</form>
+<!-- 
+<div *ngIf="loginId.errors?.required">Enter LoginId</div>
+<div *ngIf="password.errors?.required">Enter Password</div>
+
+<div *ngIf="loginId.errors?.minlength">Enter Min 4 Characters for LoginId</div>
+<div *ngIf="password.errors?.minlength">Enter Min 4 Characters for Password</div> -->

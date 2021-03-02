@@ -1,0 +1,18 @@
+<div class="container" align="center">
+    <fieldset>
+        <legend>User Registration</legend>
+    </fieldset>
+
+    <form #regForm="ngForm"  class="form-group" (ngSubmit)="registeruser(regForm.value)">
+        <input type="text" class="form-group" placeholder="name"    name="farmerName"    ngModel /> <br/>
+       
+        <input type="text"   class="form-group" placeholder="address"   name="address"   ngModel /> <br/>        
+     
+        <input type="text"   class="form-group" placeholder="mobile"   name="mobile"   ngModel /> <br/>
+       
+        <input type="text"     class="form-group" placeholder="loginId"  name="loginId"  ngModel /> <br/>        
+        <input type="password" class="form-group" placeholder="password" name="password" ngModel /> <br/>
+
+        <button class="btn btn-primary">Register</button>
+    </form>
+</div>
