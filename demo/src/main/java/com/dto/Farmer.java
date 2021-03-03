@@ -16,29 +16,29 @@ public class Farmer {
 	
 	@Id
 	@GeneratedValue
-	private  int   farmer_id ;
+	private  int   farmerId ;
 	private  String name;
 	private   int   mobile;
 	private   String  address;
 
-	private String login_id;
+	private String loginId;
 	private  String password;
 	
 	
 	
 	@OneToMany(mappedBy="farmer")
-	private List<Land> landsList = new ArrayList<>();
+	private List<Land> landsList = new ArrayList();
 	
 	public Farmer() {
 		super();
 	}
 
 	public int getFarmer_id() {
-		return farmer_id;
+		return farmerId;
 	}
 
 	public void setFarmer_id(int farmer_id) {
-		this.farmer_id = farmer_id;
+		this.farmerId = farmerId;
 	}
 
 	public String getName() {
@@ -65,12 +65,12 @@ public class Farmer {
 		this.address = address;
 	}
 
-	public String getLogin_id() {
-		return login_id;
+	public String getLoginId() {
+		return loginId;
 	}
 
-	public void setLogin_id(String login_id) {
-		this.login_id = login_id;
+	public void setLogin_id(String loginIid) {
+		this.loginId = loginIid;
 	}
 
 	public String getPassword() {
@@ -92,19 +92,19 @@ public class Farmer {
 	public Farmer(int farmer_id, String name, int mobile, String address, String login_id, String password,
 			List<Land> landsList) {
 		super();
-		this.farmer_id = farmer_id;
+		this.farmerId = farmerId;
 		this.name = name;
 		this.mobile = mobile;
 		this.address = address;
-		this.login_id = login_id;
+		this.loginId = loginId;
 		this.password = password;
 		this.landsList = landsList;
 	}
 
 	@Override
 	public String toString() {
-		return "Farmer [farmer_id=" + farmer_id + ", name=" + name + ", mobile=" + mobile + ", address=" + address
-				+ ", login_id=" + login_id + ", password=" + password + ", landsList=" + landsList + "]";
+		return "Farmer [farmerId=" + farmerId + ", name=" + name + ", mobile=" + mobile + ", address=" + address
+				+ ", login_id=" + loginId + ", password=" + password + ", landsList=" + landsList + "]";
 	}
 	
 	
