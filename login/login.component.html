@@ -1,0 +1,51 @@
+<h1 align="center"></h1>
+<!-- 
+<input type="text"     placeholder="Enter LoginId"  [(ngModel)]="user.loginId"/> <br/>
+<input type="password" placeholder="Enter Password" [(ngModel)]="user.password"/> <br/>
+<button (click)="loginSubmit()">Login</button> 
+-->
+
+<!-- <form #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm.value)" novalidate>
+    <input type="text"     placeholder="LoginId"  name="loginId"#loginId="ngModel"  ngModel /> <br/>
+    <input type="password" placeholder="Password" name="password" #password="ngModel" ngMod  el  /> <br/>
+    <button [disabled]="!loginForm.valid">Login</button>
+</form> -->
+<!-- 
+<div *ngIf="loginId.errors?.required">Enter LoginId</div>
+<div *ngIf="password.errors?.required">Enter Password</div>
+
+<div *ngIf="loginId.errors?.minlength">Enter Min 4 Characters for LoginId</div>
+<div *ngIf="password.errors?.minlength">Enter Min 4 Characters for Password</div> -->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">Sign In</h5>
+              <form class="form-signin"  #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm.value)" novalidate>
+                <div class="form-label-group">
+                  Enter LoginId :<input type="login"  class="form-control" placeholder="LoginId"  required autofocus>
+                  
+                </div>
+  
+                <div class="form-label-group">
+                  Enter Password :<input type="password"  class="form-control" placeholder="Password" required>
+                  
+                </div>
+  
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+              
+            
+                
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  
