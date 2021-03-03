@@ -16,4 +16,15 @@ export class RegisterComponent implements OnInit {
     console.log("User Registration Details:");
     console.log(regForm);    
   }
+  submitregisterForm(registerForm: any): void {
+   
+    console.log(registerForm);
+    if(registerForm.loginId === 'admin' && registerForm.password === 'admin') {
+     
+  
+    }
+  // selector(RegisterForm : any ) {
+    
+  // }
+  }
 }
