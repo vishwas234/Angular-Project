@@ -1,0 +1,35 @@
+<h1 align="center"></h1>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Bidding Page</h5>
+                        <form class="form-bid" #BidForm="ngForm" novalidate>
+                            <div class="form-label-group">
+                                Enter Bid Value :<input type="text" class="form-control" placeholder="bidValue" required
+                                    autofocus>
+                            </div>
+                            <div class="form-label-group">
+                                Enter Land Survey Number :<input type="text" class="form-control" placeholder="surveyNo"
+                                    required>
+                            </div>
+                            <div class="form-label-group">
+                                Enter Bidder ID :<input type="text" class="form-control" placeholder="bidderId"
+                                    required>
+                            </div>
+                            <br />
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Bid</button>
+                        </form>
+                    </div>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+</body>
