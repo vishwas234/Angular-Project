@@ -1,0 +1,52 @@
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-uppercase">Registeration</h5>
+                        <form class="form-group" #regForm="ngForm" (ngSubmit)="registeruser(regForm.value)" novalidate>
+                            <div class="form-label-group">
+                                <input type="text" name="name" class="form-control" placeholder="name"  #name="ngModel" minlength="6"
+                                    required ngModel>
+                            </div>
+                            <div class="form-label-group">
+                                <input type="text" name="address" class="form-control"
+                                    placeholder="address"  required ngModel>
+                            </div>
+                            <div class="form-label-group">
+                                <input type="text" name="mobile" class="form-control" placeholder="mobile"  #mobile ="ngModel" minlength="10" maxlength="10"
+                                    required ngModel>
+                            </div>
+                            <div class="form-label-group">
+                                 <input type="text" name="loginId" class="form-control"
+                                    placeholder="loginId" #loginId="ngModel" minlength="6" required ngModel>
+                            </div>
+                            <div class="form-label-group">
+                                 <input type="password" name="password" class="form-control"
+                                    placeholder="password" #password="ngModel" minlength="6" required ngModel>
+                            </div>
+                            <br />
+                            select: <select class="form-select" name="selector" aria-label="Default select example"
+                                ngModel>
+                                <option value="1">Bidder</option>
+                                <option value="2">Farmer</option>
+                            </select>
+                            <div><br />
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase " type="submit"
+                                    routerLink="/login" routerLinkActive="active" [disabled]="!regForm.valid"> Register</button>
+                            </div>
+                        </form>
+                        <div *ngIf="name.errors?.required">enter name</div>
+
+                        <br/>
+                        <div *ngIf="mobile.errors?.minlength">enter min 10 numbers</div>
+                        <div *ngIf="mobile.errors?.maxlength">max 10 numbers</div>
+                        <div *ngIf="loginId.errors?.minlength">enter min 6 characters</div>
+                        <div *ngIf="password.errors?.minlength">enter min 6 characters</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
