@@ -1,0 +1,94 @@
+ .container
+ {
+     position: absolute;
+     top:50%;
+     left:50%;
+     transform:translate(-50%,-50%);
+     width:400px;
+     height:410px;
+     padding:80px 40px;
+     box-sizing: border-box;
+     background: rgba(0, 0, 0, 0.411);
+ }
+
+ h3
+ {
+    
+padding:0  0  0px;
+color:#1E90FF;
+text-align: center;
+ }
+ .container p
+ {
+     padding:0;
+     margin:0;
+     font-weight: bold;
+     color:#fff;
+ }
+ .container input
+ {
+     width:100%;
+     margin-bottom: 0.5px;
+ }
+ .container input[type="text"],.container input[type="password"]
+ {
+     border:none;
+     border-bottom:  1px solid #fff;
+     background: transparent;
+     outline:none;
+     font-weight: bold;
+     height:30px;
+     color:#fff;
+     font-size:  16px;
+
+ }
+ .container input[type="number"],.container input[type="password"]
+ {
+     border:none;
+     border-bottom:  1px solid #fff;
+     background: transparent;
+     outline:none;
+     font-weight: bold;
+     height:30px;
+     color:#fff;
+     font-size:  16px;
+
+ }
+ 
+ .container button
+ {
+    border:none;
+    position: center;
+    outline:none;
+    height:40px;
+    color:#fff;
+    font-size: 16px;
+    transform:translate(0%,0%);
+    background: rgb(18, 105, 219);
+    cursor: pointer
+    border-radius 20px;
+ }
+ .container input[type="submit"]
+ {
+     border:none;
+     outline:none;
+     position: center;
+     height:40px;
+     color:#fff;
+     font-size: 16px;
+     background: rgb(255,38,126);
+     cursor: pointer
+     border-radius 20px;
+ }
+.container input[type="submit"]:hover
+{
+    background: #efed40;
+    color:#262626;
+}
+::placeholder{
+    color: rgba(255,255,255,0.5);
+}
+.error{
+    color: rgb(255, 2, 2);
+   
+}
