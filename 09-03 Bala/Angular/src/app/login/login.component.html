@@ -1,0 +1,46 @@
+<h1 align="center"></h1>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+            <form #loginform = "ngForm" (ngSubmit) ="loginUser()  ">
+              <div class="form-label-group">
+                <input type="text" placeholder="LoginId" class="form-control" name="loginId"  [(ngModel)]=user.loginId>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" placeholder="password" class="form-control"  name="password" [(ngModel)]=user.password >
+              </div>
+
+              <br />
+              <div class="form-label-group">
+              Login  as: <select class="form-control" [(ngModel)]='nrSelect'>
+                                <option value='1' >Farmer</option>
+                                <option value='2'>Bidder</option>
+                            </select>
+                          </div>
+                            <br/>
+                            <br/>
+
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" >Sign in</button>
+
+            </form>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4 col-md-3 col-lg-2 mx-auto">
+      <button class=" btn btn-lg btn-primary btn-block text-uppercase" type="submit"
+        >Register</button>
+    </div>
+  </div>
+</body>

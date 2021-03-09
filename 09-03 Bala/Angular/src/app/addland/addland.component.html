@@ -1,0 +1,38 @@
+<h1 align="center"></h1>
+
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Add Land</h5>
+                        <form #landForm="ngForm" (ngSubmit) = "addLand()">
+                            <div class="form-label-group">
+                                Enter Land Survey Number :<input type="text" class="form-control" placeholder="SurveyNumber" name ="SurveyNumber" [(ngModel)] = land.surveynumber
+                                    required>
+                            </div>
+                            <div class="form-label-group">
+                                Enter Land Area :<input type="text" class="form-control" placeholder="Area" name = "Area" [(ngModel)] = land.area
+                                required>
+                            </div>
+                            <div class="form-label-group">
+                                Enter Land Location :<input type="text" class="form-control" placeholder="Location"  name = "Location " [(ngModel)] = land.location
+                                    required>
+                            </div>
+                            
+                            <div class="form-label-group">
+                                Enter Price :<input type="text" class="form-control" placeholder="Price"  name = "Price "[(ngModel)] = land.price
+                                    required>
+                            </div>
+                            <br />
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register Land</button>
+                        </form>
+                    </div>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+</body>

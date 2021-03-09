@@ -1,0 +1,50 @@
+
+<div style = "text-align: center">
+    
+    </div>
+    
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-uppercase">Registeration</h5>
+                            <form class="form-group" #regForm="ngForm" (ngSubmit)="registerUser()">
+                                <div class="form-label-group">
+                                    Enter Name :<input type="text"   name="name" class="form-control" placeholder="name" [(ngModel)]=user.name
+                                        required ngModel>
+                                </div>
+    
+                                <div class="form-label-group">
+                                    Enter Addresss :<input type="text"  name="address"class="form-control"  [(ngModel)]=user.address
+                                        placeholder="address" required ngModel>
+                                </div>
+                                <div class="form-label-group">
+                                    Enter Mobile :<input type="text" name="mobile" class="form-control" placeholder="mobile" [(ngModel)]=user.mobile
+                                        required ngModel>
+                                </div>
+                                <div class="form-label-group">
+                                    Enter LoginId :<input type="text"  name="loginId" class="form-control" [(ngModel)]=user.loginId
+                                        placeholder="loginId" required ngModel>
+                                </div>
+                                <div class="form-label-group">
+                                    Enter Password :<input type="password"   name="password" class="form-control" [(ngModel)]=user.password
+                                        placeholder="password" required ngModel>
+                                </div>
+                                <br />
+                                Register as:  <select class="form-control" [(ngModel)]='nrSelect' placeholder = "nrSelect">
+                                    
+                                    <option value="1">Farmer</option>
+                                    <option value="2">Bidder</option>
+                                </select>
+                                <div><br />
+                                    <button class="btn btn-lg btn-primary btn-block text-uppercase " type="submit" > Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
