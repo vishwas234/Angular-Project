@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand">Behest</a>
+
+
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="login" routerLinkActive="active">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+      </li>
+
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0 ml-auto float-right">
+
+      <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Contact Us</button>
+    </form>
+  </div>
+</nav>
+
+
+<h1 align="center"></h1>
+
+<body>
+  <div class="container">
+    <h3 align="center">Sign In</h3>
+    <div class="row">
+      <div class="card-body">
+
+        <form class="form-signin" #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm.value)" novalidate>
+          <div class="form-label-group">
+            <input type="text" placeholder="LoginId" class="form-control" name="loginId" #loginId="ngModel" ngModel
+              required />
+
+          </div>
+
+          <div class="form-label-group">
+            <input type="password" class="form-control" placeholder="password" name="password" #password="ngModel"
+              ngModel required>
+
+          </div>
+
+          <button [disabled]="!loginForm.valid">Sign in</button>
+          <br />
+          <br />
+          <div class="field">
+
+            <!-- <button type="submit" routerLink="/register" routerLinkActive="active">Register</button> -->
+
+          </div>
+        </form>
+        <div *ngIf="loginId.errors?.required">Enter LoginId</div>
+        <div *ngIf="password.errors?.required">Enter Password</div>
+      </div>
+
+      <!--<div class="field">
+          <input type="submit" value="REGISTER">
+        </div>-->
+
+    </div>
+  </div>
+
+</body>
