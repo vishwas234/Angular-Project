@@ -1,0 +1,99 @@
+<nav class="nav ">
+    <div class="container">
+        <!-- <div id="mainListDiv" class="main_list"> -->
+        <ul class="nav nav-fill">
+            <li class="nav-items"><a class="nav-link active text" data-toggle="tab" routerLink="/viewlandbyfarmer">View
+                    Lands</a>
+            </li>
+            <li class="nav-items"><a class="nav-link text  " data-toggle="tab" routerLink="/addland">Add Lands</a> </li>
+            <li class="nav-items"><a class="nav-link   text" data-toggle="tab" routerLink="/viewbids">View Bids</a>
+            </li>
+
+        </ul>
+
+    </div>
+    <li class="nav-item justify-content-end">
+        <a class="nav-link active text" routerLink="/login">Sign Out</a>
+    </li>
+
+</nav>
+
+
+
+<h1 align="center">Lands</h1>
+<br />
+<br />
+
+
+<div class="container">
+    <table class="table table-hover text-center">
+        <thead>
+            <tr>
+                <th> Survey Number </th>
+                <th>Area</th>
+                <th>Price</th>
+                <th>Location</th>
+                <th>BID</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td> <button class="btn btn-primary" (click)="showEditPopup(land)">
+                        Edit
+                    </button> </td>
+                <td> <button class="btn btn-primary" (click)="deleteLand(land)">
+                        Delete
+                    </button> </td>
+            </tr>
+
+            <tr *ngFor="let land of lands">
+                <td>{{land.surveyNumber}}</td>
+                <td>{{land.area}}</td>
+                <td>{{land.location}}</td>
+                <td>{{land.price}}</td>
+                <td> <button class="btn btn-primary" data-toggle="modal" data-target="#landModel">
+                        Edit
+                    </button> </td>
+                <td> <button class=" btn btn-primary" (click)="deleteLand(land)">
+                        Delete
+                    </button> </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<div class="container">
+
+    <div class="modal fade" id="landModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3> Edit Land </h3>
+                    <span class="close" data-dismiss="modal">&times;</span>
+                </div>
+                <div class="modal-body text-center">
+                    <!-- <form #regForm="ngForm">
+                        <input type="number" placeholder="SurveyNo" name="surveyNumber"
+                            [(ngModel)]="editLand.surveyNumber" />
+                        <br /> <br />
+                        <input type="number" placeholder="Area" name="area" [(ngModel)]="editLand.area" />
+                        <br /><br />
+                        <input type="number" placeholder="Price" name="price" [(ngModel)]="editLand.price" />
+                        <br />
+
+                    </form> -->
+                </div>
+                <div class="modal-footer">
+                    <button (click)="updateland()" class="btn btn-primary btn-sm" data-dismiss="modal">Update
+                        Land</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
