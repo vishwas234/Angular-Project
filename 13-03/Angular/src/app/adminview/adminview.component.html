@@ -37,14 +37,14 @@
                 <td>2</td>
                 <td>3</td>
                 <td>4</td>
-                <td> <button class="btn btn-danger" (click)="delete(bid)">Bid</button></td>
+                <td> <button class="btn btn-danger" (click)="delete(bid)">Delete Bid</button></td>
             </tr>
             <tr *ngFor="let bid of bids">
                 <td>{{bid.bidId}}</td>
                 <td>{{bid.bidderId}}</td>
                 <td>{{bid.surveyNumber}}</td>
                 <td>{{bid.bidValue}}</td>
-                <td> <button class="btn btn-danger" (click)="delete(bid)">Bid</button></td>
+                <td> <button class="btn btn-danger" (click)="delete(bid)">Delete Bid</button></td>
             </tr>
 
         </tbody>
