@@ -1,0 +1,60 @@
+<nav class="nav ">
+    <div class="container">
+        <!-- <div id="mainListDiv" class="main_list"> -->
+        <ul class="nav nav-fill">
+            <li class="nav-items"><a class="nav-link active text" data-toggle="tab" routerLink="/viewlandbyfarmer">View
+                    Lands</a>
+            </li>
+            <li class="nav-items"><a class="nav-link text  " data-toggle="tab" routerLink="/addland">Add Lands</a> </li>
+            <li class="nav-items"><a class="nav-link   text" data-toggle="tab" routerLink="/viewbids">View Bids</a>
+            </li>
+
+        </ul>
+
+    </div>
+    <li class="nav-item justify-content-end">
+        <a class="nav-link active text" routerLink="/login">Sign Out</a>
+    </li>
+
+</nav>
+
+
+
+<h1 align="center"></h1>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title  ">Add Land</h5>
+                    <form #landForm="ngForm" (ngSubmit)="addLand()">
+                        <div class="form-label-group">
+                            <label class="label">Enter Land Survey Number</label> <input type="text"
+                                class="form-control" name="SurveyNumber" [(ngModel)]=land.surveyNumber>
+                        </div>
+                        <div class="form-label-group">
+                            <label class="label">Enter Land Area </label> <input type="text" class="form-control"
+                                name="Area" [(ngModel)]=land.area required>
+                        </div>
+                        <div class="form-label-group">
+                            <label class="label">Enter Land Location:</label> <input type="text" class="form-control"
+                                name="Location " [(ngModel)]=land.location required>
+                        </div>
+
+                        <div class="form-label-group">
+                            <label class="label">Enter Price</label> <input type="text" class="form-control"
+                                name="Price " [(ngModel)]=land.price required>
+                        </div>
+                        <br />
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register
+                            Land</button>
+                    </form>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
