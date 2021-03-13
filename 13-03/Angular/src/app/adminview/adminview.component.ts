@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adminview.component.css']
 })
 export class AdminviewComponent implements OnInit {
+  bids: any
+  bid: any
 
   constructor() { }
 
   ngOnInit(): void {
   }
+  delete(bid: any) {
 
+  }
 }

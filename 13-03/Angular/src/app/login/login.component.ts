@@ -1,6 +1,5 @@
 import { Userkind } from './../userkind';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonService } from '../common.service';
 import { LoginService } from '../login.service';
@@ -21,8 +20,8 @@ export class LoginComponent implements OnInit {
   modifiedtext: number;
   userkinds: Userkind[] = [
     { id: 1, name: "Farmer" },
-    { id: 2, name: "Bidder" },
-    { id: 3, name: "Admin" }
+    { id: 2, name: "Bidder" }
+
   ];
 
   constructor(private serv: LoginService, private commserve: CommonService, private router: Router, private toastr: ToastrService) {
@@ -49,6 +48,7 @@ export class LoginComponent implements OnInit {
           this.commserve.setloginin();
           this.router.navigate(['viewlandbyfarmer']);
 
+          this.toastr.success("Welcome, Farmer.")
 
         },
         error => console.log("exception was occured")
@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
             console.log("response received")
             this.commserve.setloginin();
             this.router.navigate(['bidderview']);
-
+            this.toastr.success("Welcome, Bidder.")
           },
           error => console.log("exception was occured")
         )
@@ -71,13 +71,8 @@ export class LoginComponent implements OnInit {
 
         console.log(this.modifiedtext + " " + typeof this.modifiedtext + " " + typeof this.userselected);
         console.log("inside other navigate");
-
-
-
-
-
-
-        this.toastr.success("Hello,  toastr message.")
+        this.router.navigate(['admin']);
+        this.toastr.success("Welcome, Admin.")
       }
     }
   }

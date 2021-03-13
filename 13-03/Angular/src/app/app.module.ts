@@ -19,6 +19,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
+import { AdminbidsComponent } from './adminbids/adminbids.component';
 
 
 const appRoot: Routes = [
@@ -31,7 +32,9 @@ const appRoot: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'viewbidbybidder', component: ViewbidbybidderComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'contactus', component: ContactusComponent }
+  { path: 'contactus', component: ContactusComponent },
+  { path: 'adminbids', component: AdminbidsComponent },
+
 ];
 
 @NgModule({
@@ -48,6 +51,7 @@ const appRoot: Routes = [
     ViewlandbyfarmerComponent,
     ViewbidbybidderComponent,
     ContactusComponent,
+    AdminbidsComponent,
   ],
   imports: [
     BrowserModule,

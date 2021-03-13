@@ -2,11 +2,8 @@
     <div class="container">
         <!-- <div id="mainListDiv" class="main_list"> -->
         <ul class="nav nav-fill">
-            <li class="nav-items"><a class="nav-link active text" data-toggle="tab" routerLink="/viewlandbyfarmer">View
-                    Lands</a>
-            </li>
-            <li class="nav-items"><a class="nav-link text  " data-toggle="tab" routerLink="/addland">Add Lands</a> </li>
-            <li class="nav-items"><a class="nav-link   text" data-toggle="tab" routerLink="/viewbids">View Bids</a>
+
+            <li class="nav-items"><a class="nav-link   text" data-toggle="tab" routerLink="/adminbids">View Bids</a>
             </li>
 
         </ul>
@@ -19,8 +16,7 @@
 </nav>
 
 
-
-<h1 align="center">Bids</h1>
+<h1 align="center">Lands</h1>
 <br />
 <br />
 <div class="container">
@@ -28,10 +24,11 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>SurveyNumber</th>
-                <th>BidderId</th>
-                <th>BidValue</th>
-
+                <th>Survey Number </th>
+                <th>Land-Area(acres)</th>
+                <th>Location</th>
+                <th>Price</th>
+                <th>BID</th>
             </tr>
         </thead>
         <tbody>
@@ -39,12 +36,16 @@
                 <td>1</td>
                 <td>2</td>
                 <td>3</td>
+                <td>4</td>
+                <td> <button class="btn btn-danger" (click)="delete(bid)">Bid</button></td>
             </tr>
-            <!-- <tr *ngFor="let bid of bids">
-                <td>{{bid.surveyNumber}}</td>
+            <tr *ngFor="let bid of bids">
+                <td>{{bid.bidId}}</td>
                 <td>{{bid.bidderId}}</td>
+                <td>{{bid.surveyNumber}}</td>
                 <td>{{bid.bidValue}}</td>
-            </tr> -->
+                <td> <button class="btn btn-danger" (click)="delete(bid)">Bid</button></td>
+            </tr>
 
         </tbody>
     </table>
