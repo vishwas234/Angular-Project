@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Land } from '../land';
 import { Router } from '@angular/router';
 import { LandService } from '../land.service';
+import { Subscriber } from 'rxjs';
 declare var $: any;
 @Component({
   selector: 'app-viewlandbyfarmer',
@@ -22,16 +23,22 @@ export class ViewlandbyfarmerComponent implements OnInit {
     )
     console.log("reached....")
 
-  } addLand() {
+  } 
+  addLand() {
     this.serv.addLandByFarmer(this.land).subscribe(
       data => console.log("response received"),
       error => console.log("exception was occured")
     )
   }
 
-  deleteLand(land: any) {
+  deleteLand() {
     console.log('Deleted Employee: ');
-    console.log(land);
+    let var1 = this.land.landId;
+    // this.serv.deleteLand().subscribe(
+    //   data => console.log("response received"),
+    //   error => console.log("exception was occured")
+    // )
+      
 
   }
 

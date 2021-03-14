@@ -2,9 +2,7 @@
     <div class="container">
         <!-- <div id="mainListDiv" class="main_list"> -->
         <ul class="nav nav-fill">
-            <li class="nav-items"><a class="nav-link active text" data-toggle="tab" routerLink="/viewlandbyfarmer">View
-                    Lands</a>
-            </li>
+            <li class="nav-items"><a class="nav-link active text" data-toggle="tab" routerLink="/viewlandbyfarmer">View Lands</a></li>
             <li class="nav-items"><a class="nav-link text  " data-toggle="tab" routerLink="/addland">Add Lands</a> </li>
             <li class="nav-items"><a class="nav-link   text" data-toggle="tab" routerLink="/viewbids">View Bids</a>
             </li>
@@ -17,9 +15,6 @@
     </li>
 
 </nav>
-
-
-
 <h1 align="center">Lands</h1>
 <br />
 <br />
@@ -29,6 +24,7 @@
     <table class="table table-hover text-center">
         <thead>
             <tr>
+                <th>LandId</th>
                 <th> Survey Number </th>
                 <th>Area</th>
                 <th>Price</th>
@@ -38,21 +34,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td> <button class="btn btn-primary" (click)="showEditPopup(land)">
-                        Edit
-                    </button> </td>
-                <td> <button class="btn btn-primary" (click)="deleteLand(land)">
-                        Delete
-                    </button> </td>
-            </tr>
 
             <tr *ngFor="let land of lands">
+                <td>{{land.landId}}</td>
                 <td>{{land.surveyNumber}}</td>
                 <td>{{land.area}}</td>
                 <td>{{land.location}}</td>
@@ -60,7 +44,7 @@
                 <td> <button class="btn btn-primary" data-toggle="modal" data-target="#landModel">
                         Edit
                     </button> </td>
-                <td> <button class=" btn btn-primary" (click)="deleteLand(land)">
+                <td> <button class=" btn btn-primary" (click)="deleteLand()">
                         Delete
                     </button> </td>
             </tr>

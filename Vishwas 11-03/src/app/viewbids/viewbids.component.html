@@ -26,6 +26,7 @@
         <table class="table table-hover">
             <thead>      
                 <tr>
+                    <th>Bid Id</th>
                     <th>SurveyNumber</th>
                     <th>BidderId</th>
                     <th>BidValue</th>
@@ -33,6 +34,7 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let bid of bids">
+                    <td>{{bid.bidId}}</td>
                     <td>{{bid.surveyNumber}}</td>
                     <td>{{bid.bidderId}}</td>
                     <td>{{bid.bidValue}}</td>

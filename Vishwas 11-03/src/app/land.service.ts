@@ -17,4 +17,8 @@ export class LandService {
     console.log("bala");
     return this.http.get<any>("http://localhost:8080/getAllLands")
   }
+  public deleteLand(){
+    this.http.delete<any>("http://localhost:8080/deleteland")
+    this.http.get<any>("http://localhost:8080/getAllLands")
+  }
 }

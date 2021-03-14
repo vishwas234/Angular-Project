@@ -27,6 +27,7 @@
     <table class="table table-hover">
         <thead>
             <tr>
+                <th>BidId</th>
                 <th>SurveyNumber</th>
                 <th>BidderId</th>
                 <th>BidValue</th>
@@ -34,18 +35,18 @@
         </thead>
         <tbody>
             <tr>
+                <td>{{bid.bidId}}</td>
                 <td>{{bid.surveyNumber}}</td>
                 <td>{{bid.bidderId}}</td>
                 <td>{{bid.bidValue}}</td>
                 <td> <button class="btn btn-primary" (click)="showEditPopup(bid)">
                         Edit
                     </button> </td>
-                <td> <button class="btn btn-primary" (click)="deleteBid(bid)">
+                <td> <button class="btn btn-danger" (click)="deleteBid()">
                         Delete
                     </button> </td>
 
             </tr>
-            <tr>
         </tbody>
     </table>
 </div>
@@ -59,19 +60,19 @@
                     <span class="close" data-dismiss="modal">&times;</span>
                 </div>
                 <div class="modal-body text-center">
-                    <form #regForm="ngForm">
+                    <!-- <form #regForm="ngForm">
                         <input type="number" placeholder="bidId" name="bidId" [(ngModel)]="editBid.bidId" />
                         <br /><br />
                         <input type="number" placeholder="bidderId" name="bidderId" [(ngModel)]="editBid.bidderId" />
-                        <br /><br /> <input type="number" placeholder="SurveyNo" name="surveyNo"
-                            [(ngModel)]="editBid.surveyNo" />
+                        <br /><br /> <input type="number" placeholder="SurveyNumber" name="surveyNumber"
+                            [(ngModel)]="editBid.surveyNumber" />
                         <br /> <br />
                         <input type="number" placeholder="bidValue" name="bidvalue" [(ngModel)]="editBid.bidvalue" />
                         <br /><br />
 
 
 
-                    </form>
+                    </form>  -->
                 </div>
                 <div class="modal-footer">
                     <button (click)="updateBid()" class="btn btn-primary btn-sm" data-dismiss="modal">Update

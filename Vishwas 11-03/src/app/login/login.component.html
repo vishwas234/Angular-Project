@@ -16,8 +16,6 @@
 </nav>
 
 
-
-
 <h1 align="center"></h1>
 
 
@@ -38,12 +36,25 @@
             </div>
 
             <br />
-            <div class="form-label-group">
+            <!-- <div class="form-label-group">
               Login as: <select class="form-control" [(ngModel)]='nrSelect'>
                 <option value='1'>Farmer</option>
                 <option value='2'>Bidder</option>
               </select>
+            </div> -->
+
+            <div class="form-label-group">
+              Login as: <select class = "form-control" id ="userselected" name="userselected" [(ngModel)]="userselected"  >
+                <option *ngFor = "let userkind of userkinds" [value]= "userkind.id" value={{modifiedtext}}> 
+                  {{userkind.name}}
+
+                </option>
+              </select>
             </div>
+
+            selected value is  {{userselected}}
+            modifiedtext = {{userselected}}
+
             <br />
             <br />
 

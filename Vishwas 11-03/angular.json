@@ -1,5 +1,4 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
     "analytics": "6d1a1b3f-5217-48b3-a1e1-2f1ed68dc024"
   },
@@ -36,7 +35,6 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
