@@ -1,0 +1,85 @@
+<nav class="nav ">
+    <div class="container">
+        <ul class="nav nav-fill">
+            <li class="nav-items"><a class="nav-link active text" routerLink="/viewlandbyfarmer">View
+                    Lands</a>
+            </li>
+            <li class="nav-items"><a class="nav-link text  " routerLink="/addland">Add Lands</a> </li>
+            <li class="nav-items"><a class="nav-link   text" routerLink="/viewbids">View Bids</a>
+            </li>
+        </ul>
+    </div>
+    <li class="nav-item justify-content-end">
+        <a class="nav-link active text" routerLink="/login">Sign Out</a>
+    </li>
+
+</nav>
+
+<h1 align="center">Lands</h1>
+<br />
+<br />
+
+<div class="container">
+    <table class="table table-hover text-center">
+        <thead>
+            <tr>
+                <th>Land ID</th>
+                <th> Survey Number </th>
+                <th>Area</th>
+                <th>Price</th>
+                <th>Location</th>
+
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let land of lands">
+                <td>{{land.landId}}</td>
+                <td>{{land.surveyNumber}}</td>
+                <td>{{land.area}}</td>
+                <td>{{land.price}}</td>
+                <td>{{land.location}}</td>
+                <td> <button class="btn btn-primary" (click)="showEditPopup(land)">
+                        Edit
+                    </button> </td>
+                <td> <button class=" btn btn-primary" (click)="deleteLand(land)">
+                        Delete
+                    </button> </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+<div class="container">
+    <div class="modal fade" id="landModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3> Edit Land </h3>
+                    <span class="close" data-dismiss="modal">&times;</span>
+                </div>
+                <div class="modal-body  text-center">
+                    <form #regForm="ngForm">
+                        <!-- <input type=" number" placeholder="Land Id" name="landId" [(ngModel)]="editland.landId" />
+                    <br /><br /> -->
+                        Survey Number:<br /><input type="number" name="surveyNumber" ngModel
+                            [(ngModel)]="editland.surveyNumber" />
+                        <br />
+                        Area: <br /><input type="number" name="area" [(ngModel)]="editland.area" />
+
+                        <br />
+                        Location<br /><input type="text" name="location" [(ngModel)]="editland.location" />
+                        <br />
+                        Price<br /><input type="number" name="price" [(ngModel)]="editland.price" />
+                        <br />
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button (click)="updateland()" class="btn btn-primary btn-sm" data-dismiss="modal">Update
+                        Land</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
