@@ -1,0 +1,84 @@
+<nav class="nav ">
+    <div class="container">
+        <ul class="nav nav-fill">
+            <li class="nav-items"><a class="nav-link active text" data-toggle="tab" routerLink="/viewbidbybidder">View
+                    Bids</a>
+            </li>
+            <li class="nav-items"><a class="nav-link text  " data-toggle="tab" routerLink="/viewlands">View Lands</a>
+            </li>
+
+        </ul>
+
+    </div>
+    <li class="nav-item justify-content-end">
+        <a class="nav-link active text" routerLink="/login">Sign Out</a>
+    </li>
+
+</nav>
+
+<h1 align="center">Lands</h1>
+<br />
+<br />
+<div class="container">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Survey Number </th>
+                <th>Land-Area(acres)</th>
+                <th>Location</th>
+                <th>Price</th>
+                <th>BID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let land of lands">
+                <td>{{land.surveyNumber}}</td>
+                <td>{{land.area}}</td>
+                <td>{{land.location}}</td>
+                <td>{{land.price}}</td>
+                <td> <button class="btn btn-primary" (click)="addBid(bid)">Bid</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="container">
+    <div class="modal fade" id="bidModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3> Add Bid </h3>
+                    <span class="close" data-dismiss="modal">&times;</span>
+                </div>
+                <div class="modal-body text-center">
+                    <form #bidForm="ngForm" (ngSubmit)="registeruser(bidForm.value)">
+                        <div class="form-label-group">
+                            Survey Number:<br /> <input type="text" class="form-control" name="surveyNumber"
+                                [(ngModel)]="bid.surveyNumber" required>
+                        </div><br />
+                        <div class="form-label-group">
+                            Login Id <br /> <input type="text" class="form-control" name="loginId"
+                                [(ngModel)]="bid.loginId" required>
+                        </div>
+                        <br />
+                        <div class="form-label-group">
+                            Bidder Id <br /><input type="text" class="form-control" name="bidderId"
+                                [(ngModel)]="bid.bidderId" required>
+                        </div><br />
+
+                        <div class="form-label-group">
+                            Value <br /> <input type="text" class="form-control" name="bidValue"
+                                [(ngModel)]="bid.bidValue" required>
+                        </div>
+                        <br />
+                        <button class="btn btn-lg btn-primary   text-uppercase" type="submit"
+                            routerLink="/viewlands">Register
+                            Bid</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
