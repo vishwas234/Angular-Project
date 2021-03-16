@@ -10,8 +10,8 @@ public class Bidder {
 	@Id
 	@GeneratedValue
 	private int bidderId;
-	private String bidderName;
-	private int contactNumber;
+	private String name;
+	private int mobile;
 	private String address;
 	private String loginId;
 	private String password;
@@ -20,11 +20,11 @@ public class Bidder {
 		super();
 	}
 
-	public Bidder(int bidderId, String bidderName, int contactNumber, String address, String loginId, String password) {
+	public Bidder(int bidderId, String name, int mobile, String address, String loginId, String password) {
 		super();
 		this.bidderId = bidderId;
-		this.bidderName = bidderName;
-		this.contactNumber = contactNumber;
+		this.name = name;
+		this.mobile = mobile;
 		this.address = address;
 		this.loginId = loginId;
 		this.password = password;
@@ -38,20 +38,20 @@ public class Bidder {
 		this.bidderId = bidderId;
 	}
 
-	public String getBidderName() {
-		return bidderName;
+	public String getName() {
+		return name;
 	}
 
-	public void setBidderName(String bidderName) {
-		this.bidderName = bidderName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public int getContactNumber() {
-		return contactNumber;
+	public int getMobile() {
+		return mobile;
 	}
 
-	public void setContactNumber(int contactNumber) {
-		this.contactNumber = contactNumber;
+	public void setMobile(int mobile) {
+		this.mobile = mobile;
 	}
 
 	public String getAddress() {

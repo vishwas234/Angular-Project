@@ -34,4 +34,8 @@ public class LandDao {
 	public Land landUpdate(Land land) {
 		return landRepository.save(land);
 	}
+
+	public List<Land> getLands(String loginId) {
+		return landRepository.findAllByLoginId(loginId);
+	}
 }

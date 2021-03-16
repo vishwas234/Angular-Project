@@ -58,5 +58,10 @@ public class LandController {
 		return landObj;
 
 	}
-
+	
+	@PostMapping("/getLandById")
+	public List<Land> getLand(@RequestBody String loginId){
+		List<Land> landList = landDao.getLands(loginId);
+		return landList;
+	}
 }

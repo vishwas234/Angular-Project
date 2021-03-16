@@ -20,6 +20,12 @@ export class LandService {
     return this.http.get<any>('/getAllLands')
   }
 
+  Searchcode(loginId : any) { 
+  //  var header = new Headers(); 
+   // header.append('Content-type', 'application/json'); 
+    return this.http.post<any>( '/getLandById', loginId); 
+}
+
   public delete(surveyNumber: any): any {
     console.log("Deleted");
     return this.http.post('/deleteland', surveyNumber);

@@ -43,8 +43,5 @@ export class ViewlandsComponent implements OnInit {
     //   //this.employees.splice(i, 1);
   }
 
-  updateBid(): void {
-    console.log(this.editBid);
-    // this.service.getFarmers(this.editEmployee).subscribe();
-  }
+  
 }
