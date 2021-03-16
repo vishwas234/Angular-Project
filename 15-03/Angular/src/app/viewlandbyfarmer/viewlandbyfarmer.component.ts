@@ -3,6 +3,8 @@ import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LandService } from '../land.service';
+import {User} from '../user';
+import { UserroleService } from '../userrole.service';
 declare var $: any;
 @Component({
   selector: 'app-viewlandbyfarmer',
@@ -12,10 +14,18 @@ declare var $: any;
 export class ViewlandbyfarmerComponent implements OnInit {
 
   land = new Land();
+  user = new User();
+  loginId :any;
   lands: any;
   public editland = new Land();
-  constructor(private Landservice: LandService, private router: Router, private toastr: ToastrService) { }
+  constructor(private Landservice: LandService, private router: Router, private toastr: ToastrService,public roleServ: UserroleService) { }
 
+  Search() { 
+    this.Landservice.Searchcode(this.loginId).subscribe(
+      response => { 
+        this.lands = response; 
+      });
+    }
   ngOnInit(): void {
     this.lands = this.Landservice.viewAllLands().subscribe(
       Response => {
@@ -23,8 +33,16 @@ export class ViewlandbyfarmerComponent implements OnInit {
       }
     )
     console.log("reached....")
-
-  } addLand() {
+    
+    // getAllTableDataById(tableName:string, idColumn:string, idValue:string): Promise<Object[]> {
+    //   return this.http.get(`${this.baseUrl}/${tableName}(${idColumn}='${idValue}')`, {headers: this.headers})
+    //   .toPromise()
+    //   .then(response => response = JSON.parse('[' + response['_body'] + ']'))
+    //   .catch(this.handleError);
+    //   }
+      
+  } 
+  addLand() {
     this.Landservice.addLandByFarmer(this.land).subscribe(
       data => { console.log("response received") },
       error => console.log("exception was occured")

@@ -10,10 +10,23 @@ public class Land {
 	@Id
 	@GeneratedValue
 	private int landId;
+	private String loginId;
 	private int surveyNumber;
 	private int area;
 	private String location;
 	private double price;
+
+	
+	
+	
+	
+	public String getLoginId() {
+		return loginId;
+	}
+
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
 
 	public int getLandId() {
 		return landId;

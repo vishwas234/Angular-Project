@@ -31,8 +31,8 @@
                     <h5 class="card-title  ">Add Land</h5>
                     <form #landForm="ngForm" (ngSubmit)="addLand()">
                         <div class="form-label-group">
-                            <label class="label">Enter Land Id</label> <input type="number" class="form-control"
-                                name="landId" [(ngModel)]=land.landId>
+                            <label class="label">Enter Farmer Login Id</label> <input type="text" 
+                            class="form-control" name="loginId" [(ngModel)]=land.loginId>
                         </div>
                         <div class="form-label-group">
                             <label class="label">Enter Land Survey Number</label> <input type="text"

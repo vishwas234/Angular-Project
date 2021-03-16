@@ -25,7 +25,7 @@ const appRoot: Routes = [
   { path: 'addland', component: AddlandComponent },
   { path: 'viewbids', component: ViewbidsComponent },
   { path: 'viewlandbyfarmer', component: ViewlandbyfarmerComponent },
-  { path: '', component: RegisterComponent },
+  { path: '', component: LoginComponent },
   { path: 'admin', component: AdminviewComponent },
   { path: 'login', component: LoginComponent },
   { path: 'viewbidbybidder', component: ViewbidbybidderComponent },

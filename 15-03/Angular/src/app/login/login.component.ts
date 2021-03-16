@@ -5,6 +5,7 @@ import { CommonService } from '../common.service';
 import { LoginService } from '../login.service';
 import { ToastrService } from 'ngx-toastr';
 import { User } from '../user';
+import { UserroleService } from '../userrole.service';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   ];
 
-  constructor(private serv: LoginService, private commserve: CommonService, private router: Router, private toastr: ToastrService) {
+  constructor(private serv: LoginService, private commserve: CommonService, private router: Router, private toastr: ToastrService , private roleServ:UserroleService) {
     this.modifiedtext = 2;
   }
 
@@ -43,6 +44,8 @@ export class LoginComponent implements OnInit {
           console.log("response received")
           this.alert = true;
           this.commserve.setloginin();
+          this.roleServ.user = this.user.loginId;
+          this.roleServ.role="farmer";
           this.router.navigate(['viewlandbyfarmer']);
           this.toastr.success("Welcome, Farmer.")
 
@@ -57,6 +60,8 @@ export class LoginComponent implements OnInit {
           data => {
             console.log("response received")
             this.commserve.setloginin();
+            this.roleServ.user = this.user.loginId;
+          this.roleServ.role="farmer";
             this.router.navigate(['viewbidbybidder']);
             this.toastr.success("Welcome, Bidder.")
           },

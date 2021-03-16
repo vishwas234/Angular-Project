@@ -19,8 +19,9 @@ export class BidService {
   }
   public deleteBid(surveyNumber: any): any {
     console.log("Deleted");
-    return this.http.post('/deleteBid', surveyNumber);
-  }
+   // this.http.post('/deleteland', surveyNumber);
+    return this.http.post('/delete', surveyNumber);
+    }
   public updateBid(bid: Bid): any {
     console.log("Updated");
     return this.http.post('/updateBid', bid);
